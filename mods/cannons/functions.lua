@@ -381,7 +381,7 @@ function cannons.register_muni(node,entity)
 	cannons.registered_muni[node] = {}
 	cannons.registered_muni[node].entity = entity
 	local name = node:split(":")
-	cannons.registered_muni[node].entity.name ="cannons:entity_"..name[1].."_"..name[2]
+	cannons.registered_muni[node].entity.name =name[1]..":cannons_entity_"..name[2]
 	cannons.registered_muni[node].entity.on_step = function(self, dtime)
 		self.timer=self.timer+dtime
 		if self.timer >= 0.3 then --easiesst less laggiest way to find out that it left his start position
@@ -604,4 +604,4 @@ local apple={
 	end,
 
 }
-cannons.register_muni("default:apple",apple)
+--cannons.register_muni("default:apple",apple)
